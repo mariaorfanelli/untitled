@@ -19,24 +19,5 @@
     <!-- legacy browsers -->
     <script src="./lib/psychojs-2024.1.5.iife.js" nomodule></script>
     <script src="./untitled-legacy-browsers.js" nomodule></script>
-    <script>
-      function sendData(participant, response) {
-        const timestamp = new Date().toISOString();
-        const data = {timestamp, participant, response};
-        fetch('https://script.google.com/macros/s/AKfycbx5T2dVAofQ1y9z36Fh9snGKh1eVs4jBPL7rOnOICqvt2BYFwJqZtCSzFZLbYnd1RXA9A/exec', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        }).then(response => {
-          if (response.ok) {
-            console.log('Data sent successfully');
-          } else {
-            console.error('Error sending data');
-          }
-        });
-      }
-    </script>
   </body>
 </html>
